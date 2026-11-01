@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Louay Bouighil | E-Portfolio</title>
+<meta name="description" content="E-portfolio of Mohamed Louay Bouighil, Computer Science Engineering student at ENSEEIHT (INP Toulouse).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#942637; --rose:#e1cbce; --ink:#1f1f27; --grey:#5c5c68; --paper:#ffffff;
+  --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --side:340px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
+a{color:var(--red)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* Sidebar with the same diagonal as the CV (slope 0.91) */
+.side{position:fixed;inset:0 auto 0 0;width:var(--side);background:var(--red);color:#fff;
+  clip-path:polygon(0 0,100% calc(var(--side)*.91),100% 100%,0 100%);
+  padding:calc(var(--side)*.91 + 24px) 36px 28px;overflow:auto}
+.side h1{font-weight:300;font-size:2rem;line-height:1.1;letter-spacing:.02em}
+.side h1 b{display:block;font-weight:600}
+.side .role{margin:14px 0 26px;font-weight:300;font-size:1rem}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{color:#fff;text-decoration:none;padding:8px 0 8px 14px;border-left:3px solid transparent;font-size:.95rem}
+.side nav a:hover{border-left-color:var(--rose)}
+.side nav a[aria-current="page"]{border-left-color:#fff;font-weight:600}
+.side .ext{margin-top:22px;display:flex;gap:16px;font-size:.9rem}
+.side .ext a{color:#fff}
+
+main{margin-left:var(--side);padding:56px 7vw 80px 56px;max-width:calc(var(--side) + 920px)}
+section[data-page]{display:none}
+section[data-page].on{display:block}
+h2{font-family:var(--serif);font-weight:700;color:var(--red);font-size:1.7rem;letter-spacing:.04em;
+  padding-bottom:10px;border-bottom:2px solid var(--rose);margin-bottom:26px}
+h3{font-size:1.05rem;font-weight:600;margin:26px 0 4px}
+p,li{max-width:68ch}
+p+p{margin-top:12px}
+ul{padding-left:20px;margin-top:6px}
+li+li{margin-top:4px}
+.meta{color:var(--grey);font-size:.88rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:10px 20px;border:2px solid var(--red);color:var(--red);text-decoration:none;font-weight:500;font-size:.92rem}
+.btn.fill{background:var(--red);color:#fff}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.hero{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap}
+.hero img{width:min(340px,100%);height:auto;display:block}
+.hero .txt{flex:1 1 320px}
+.hero .txt p:first-child{font-family:var(--serif);font-size:1.25rem;line-height:1.5}
+.item{border-left:3px solid var(--rose);padding:2px 0 2px 18px;margin-top:22px}
+.item h3{margin-top:0}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:10px}
+.roles article{border-top:3px solid var(--red);padding-top:12px}
+.roles h3{margin-top:0}
+.note{margin-top:26px;padding:14px 18px;background:#f7eef0;border-left:3px solid var(--red);max-width:68ch;font-size:.93rem}
+.video{margin-top:10px;aspect-ratio:16/9;max-width:640px;border:2px dashed var(--rose);display:grid;place-items:center;color:var(--grey);text-align:center;padding:20px}
+.video video,.video iframe{width:100%;height:100%;border:0}
+
+@media (max-width:860px){
+  .side{position:static;width:auto;clip-path:none;padding:26px 22px 14px}
+  .side h1{font-size:1.5rem}
+  .side h1 b{display:inline;margin-left:.25em}
+  .side .role{margin:6px 0 12px}
+  .side nav{flex-direction:row;flex-wrap:wrap;gap:4px 14px}
+  .side nav a{padding:6px 0;border-left:0;border-bottom:3px solid transparent;font-size:.85rem}
+  .side nav a:hover,.side nav a[aria-current="page"]{border-bottom-color:#fff}
+  .side .ext{display:none}
+  main{margin:0;padding:32px 22px 60px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <h1>Mohamed Louay <b>Bouighil</b></h1>
+  <p class="role">ENSEEIHT student, Digital Sciences</p>
+  <nav aria-label="Main navigation">
+    <a href="#welcome">Welcome</a>
+    <a href="#engineering-course">Engineering course</a>
+    <a href="#international-mobility">International Mobility</a>
+    <a href="#sustainability-civic-engagement">Sustainability &amp; Civic Engagement</a>
+    <a href="#sport-other-activities">Sport &amp; other activities</a>
+    <a href="#career-development">Career Development</a>
+  </nav>
+  <div class="ext">
+    <a href="https://www.linkedin.com/in/mohamed-louay-bouighil-284541448" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="cv-english.pdf" target="_blank" rel="noopener">CV (EN)</a>
+    <a href="cv-francais.pdf" target="_blank" rel="noopener">CV (FR)</a>
+  </div>
+</aside>
+
+<main>
+
+<!-- 1. WELCOME -->
+<section data-page="welcome" id="welcome">
+  <h2>Welcome</h2>
+  <div class="hero">
+    <img src="photo.png" alt="Portrait of Mohamed Louay Bouighil in a navy suit and white shirt">
+    <div class="txt">
+      <p>Hi, I’m Mohamed Louay Bouighil, a first-year Computer Science Engineering student at ENSEEIHT (INP Toulouse), specialising in Digital Sciences.</p>
+      <p>After two years of MP preparatory classes in Casablanca, I arrived in France to build a profile at the crossroads of Data, Finance and Cybersecurity. A former Judo Champion of Morocco, I bring the rigour, discipline and team spirit of high-level sport to every technical project.</p>
+      <p>This e-portfolio tells the story of my journey so far and of where I’m heading.</p>
+      <p class="meta" style="margin-top:14px">Interests: coding, sport, finance, data science.</p>
+      <div class="btns">
+        <a class="btn fill" href="cv-english.pdf" target="_blank" rel="noopener">CV in English</a>
+        <a class="btn fill" href="cv-francais.pdf" target="_blank" rel="noopener">CV en français</a>
+        <a class="btn" href="https://www.linkedin.com/in/mohamed-louay-bouighil-284541448" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="#career-development">My career project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ENGINEERING COURSE -->
+<section data-page="engineering-course" id="engineering-course">
+  <h2>Engineering course</h2>
+  <div class="item">
+    <h3>ENSEEIHT, INP Toulouse: Engineering Degree</h3>
+    <p class="meta">2026 to present</p>
+    <p>First year of the Digital Sciences track. Skills in progress: Python, Ada and SQL.</p>
+  </div>
+  <div class="item">
+    <h3>TIPE: MRI image reconstruction</h3>
+    <p class="meta">Preparatory classes, 2024 to 2026</p>
+    <ul>
+      <li>Studied the physical principles of MRI and modelled them mathematically.</li>
+      <li>Worked on algorithmic image reconstruction and its optimisation under physical constraints.</li>
+      <li>Skills: analysis, modelling, optimisation and rigour.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <h3>Moroccan Mathematics Championship (MMC)</h3>
+    <p class="meta">Summer 2026</p>
+    <p>National individual competition: solving complex problems under high time pressure.</p>
+  </div>
+  <div class="item">
+    <h3>Moroccan Tournament of Young Mathematicians (MTYM)</h3>
+    <p class="meta">2024</p>
+    <p>International team competition: collaborative problem-solving and oral presentation of results to a jury.</p>
+  </div>
+  <div class="item">
+    <h3>Background</h3>
+    <ul>
+      <li>Preparatory classes (MP track), Lycée Mohamed V, Casablanca, 2024 to 2026.</li>
+      <li>Scientific Baccalaureate (SMB option), Lycée Mohamed V, 2024, with highest honours.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. INTERNATIONAL MOBILITY -->
+<section data-page="international-mobility" id="international-mobility">
+  <h2>International Mobility</h2>
+  <p>I am currently in my first year at ENSEEIHT, and I recently arrived in France from Morocco.</p>
+  <p>My international mobility projects will be defined and added to this section later in my studies.</p>
+  <p class="note">Section in progress. My provisional ideas are listed in <a href="#career-development">Career Development</a>.</p>
+</section>
+
+<!-- 4. SUSTAINABILITY & CIVIC ENGAGEMENT -->
+<section data-page="sustainability-civic-engagement" id="sustainability-civic-engagement">
+  <h2>Sustainability &amp; Civic Engagement</h2>
+  <div class="item">
+    <h3>E-sport tournament (Clash Royale)</h3>
+    <p>I organised and ran this competition on my own, from the registrations (32 participants) to the match brackets and the live hosting.</p>
+  </div>
+  <div class="item">
+    <h3>Basketball tournament</h3>
+    <p>I organised the event with a knockout format including semi-finals and a final. I handled logistics, communication and the coordination of the matches.</p>
+  </div>
+  <div class="item">
+    <h3>Climate and sustainability</h3>
+    <ul>
+      <li>Participated in a Clean Walk.</li>
+      <li>Took part in a Climate Fresk workshop.</li>
+      <li>Attended the “King Kong” event and a conference on the future of climate and global warming.</li>
+    </ul>
+  </div>
+  <p style="margin-top:24px">These experiences taught me project management, autonomy and environmental awareness.</p>
+</section>
+
+<!-- 5. SPORT & OTHER ACTIVITIES -->
+<section data-page="sport-other-activities" id="sport-other-activities">
+  <h2>Sport &amp; other activities</h2>
+  <p>Judo has been my school of life. As a former Judo Champion of Morocco, I learned rigour, discipline, resilience and stress management, qualities I now apply to my studies and to team projects.</p>
+  <p>I enjoy many other sports, and I like to stay active and competitive.</p>
+  <p>Outside of sport, I love sitting down and coding for hours, and I follow topics in finance and data science.</p>
+</section>
+
+<!-- 6. CAREER DEVELOPMENT -->
+<section data-page="career-development" id="career-development">
+  <h2>Career Development</h2>
+
+  <h3>Career project</h3>
+  <p>I am in my first year (S5) and refining my career path between Data, Finance and Cybersecurity, with a stronger pull towards Data Science and Finance.</p>
+
+  <h3>My CVs and profile</h3>
+  <div class="btns" style="margin-top:12px">
+    <a class="btn fill" href="cv-english.pdf" target="_blank" rel="noopener">CV in English</a>
+    <a class="btn fill" href="cv-francais.pdf" target="_blank" rel="noopener">CV en français</a>
+    <a class="btn" href="https://www.linkedin.com/in/mohamed-louay-bouighil-284541448" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <h3 style="margin-top:34px">Role models</h3>
+  <p class="meta">Public figures for now. My Job Glasses interviews with professionals will complete this section.</p>
+  <div class="roles">
+    <article>
+      <h3>Andrew Ng</h3>
+      <p class="meta">Data science and AI</p>
+      <p>Computer scientist, co-founder of Google Brain and Coursera, founder of DeepLearning.AI. He moved from research to industry to teaching, which echoes my taste for explaining ideas.</p>
+    </article>
+    <article>
+      <h3>Jim Simons</h3>
+      <p class="meta">Quantitative finance</p>
+      <p>Mathematician and former code-breaker who founded Renaissance Technologies, a pioneer of quantitative investing. He shows what mathematics and data can do in markets.</p>
+    </article>
+    <article>
+      <h3>Bruce Schneier</h3>
+      <p class="meta">Cybersecurity</p>
+      <p>Cryptographer and security expert, author of <em>Applied Cryptography</em>. He links technical security with its social and policy stakes.</p>
+    </article>
+  </div>
+
+  <h3 style="margin-top:34px">Potential international mobility projects</h3>
+  <p class="meta">Provisional ideas, to be refined with my role models.</p>
+  <ul>
+    <li>An exchange semester in Canada or the USA in Data Science.</li>
+    <li>An internship in Europe in Cybersecurity.</li>
+    <li>A professional experience in Morocco or Asia in Quantitative Finance.</li>
+  </ul>
+
+  <h3 style="margin-top:34px">Elevator pitch video</h3>
+  <p class="meta">Unique Value Proposal, 2 to 3 minutes, in English.</p>
+  <!-- When the video is ready, replace the box below with:
+       <video controls src="pitch.mp4"></video>
+       or a YouTube iframe. -->
+  <div class="video">Video coming soon.</div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var pages=document.querySelectorAll('section[data-page]');
+  var links=document.querySelectorAll('.side nav a');
+  function show(){
+    var id=(location.hash||'#welcome').slice(1);
+    var found=false;
+    pages.forEach(function(p){var on=p.dataset.page===id;p.classList.toggle('on',on);if(on)found=true;});
+    if(!found){id='welcome';document.getElementById('welcome').classList.add('on');}
+    links.forEach(function(a){
+      if(a.getAttribute('href')==='#'+id){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
